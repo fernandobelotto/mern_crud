@@ -1,24 +1,24 @@
+import { userInfo } from "os";
 import { User } from "../models";
 
 export class UserRepository {
   static async findOne(id: string) {
-    const user = await User.findOne({ _id: id });
-    return user;
+    const res = await User.findOne({ _id: id });
+    return res;
   }
-
-  static async deleteOne(id: string) {
-    const user = await User.deleteOne({ _id: id });
-    return user;
+  static deleteOne(id: string) {
+    User.deleteOne({ _id: id });
   }
-
-  static async find() {
-    const users = await User.find({});
-    return users;
+  static find() {
+    return User.find();
   }
-
   static async create(data: any) {
     const user = new User(data);
     await user.save();
     return user;
+  }
+
+  static async updateOne(id: string, data: any) {
+    return User.findByIdAndUpdate(id, data);
   }
 }

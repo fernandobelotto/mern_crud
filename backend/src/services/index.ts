@@ -18,7 +18,11 @@ export class UserService {
     const user = await UserRepository.deleteOne(id);
     res.send(user);
   }
-  static async update(req: Request, res: Response) {}
+  static async update(req: Request, res: Response) {
+    const { id } = req.params;
+    const user = await UserRepository.updateOne(id, req.body);
+    res.send(user);
+  }
   static async find(req: Request, res: Response) {
     const { id } = req.params;
     const user = UserRepository.findOne(id);
