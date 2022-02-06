@@ -1,0 +1,13 @@
+{
+  "name": "mern_crud",
+  "version": "1.0.0",
+  "description": ">mongo, express, react and nodejs stack",
+  "main": "index.js",
+  "scripts": {
+    "start:front": "cd ./frontend && npm run start",
+    "start:back": "cd ./backend && npm run start "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
