@@ -1,22 +1,27 @@
 import { User } from 'models/user'
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'store'
-import { fetchUsers } from 'store/UserSlice'
+import { deleteUserById, fetchUserById, fetchUsers } from 'store/UserThunks'
 
 
 export default function UsersPage() {
 
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
     const { users } = useAppSelector(state => state.users)
-    console.log(users);
 
     useEffect(() => {
         dispatch(fetchUsers())
     }, [])
 
     function handleDeleteUser(id: string) {
-        // UserApi.deleteById(id)
+        dispatch(deleteUserById(id))
+    }
+
+    function handleEditUser(id: string) {
+        dispatch(fetchUserById(id))
+        navigate(`${id}`)
     }
 
     return (
@@ -28,6 +33,7 @@ export default function UsersPage() {
                     <>
                         <p>{user.name} - {user.age}</p>
                         <button onClick={() => handleDeleteUser(user._id as string)}>delete</button>
+                        <button onClick={() => handleEditUser(user._id as string)}>edit</button>
                     </>
                 )
             }) : null}

@@ -6,8 +6,8 @@ export class UserRepository {
     const res = await User.findOne({ _id: id });
     return res;
   }
-  static deleteOne(id: string) {
-    User.deleteOne({ _id: id });
+  static async deleteOne(id: string) {
+    return User.deleteOne({ _id: id });
   }
   static find() {
     return User.find();

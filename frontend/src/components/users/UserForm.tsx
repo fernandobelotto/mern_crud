@@ -1,7 +1,7 @@
-import { useForm } from "react-hook-form"
-import { useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "store"
-import { createUser } from "store/UserSlice"
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "store";
+import { createUser } from "store/UserThunks";
 
 export default function UserForm() {
 

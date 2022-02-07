@@ -1,10 +1,9 @@
-import React from 'react'
+import UserForm from 'components/users/UserForm'
 
 export default function UserDetailPage() {
     return (
         <>
-
-
+            <UserForm />
         </>
     )
 }

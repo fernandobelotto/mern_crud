@@ -15,11 +15,13 @@
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "mongoose": "^6.2.0"
+    "mongoose": "^6.2.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.15",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
