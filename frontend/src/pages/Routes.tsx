@@ -19,7 +19,6 @@ export default function Routes() {
                         <Route path="new" element={<NewUserPage />} />
                         <Route index element={<UsersPage />} />
                     </Route>
-                    {/* </Route> */}
                 </ReactRoutes>
             </BrowserRouter>
         </>

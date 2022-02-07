@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  createUser,
-  deleteUserById,
-  fetchUserById,
-  fetchUsers,
-  updateUserById,
-} from "./UserThunks";
+import { fetchUserById, fetchUsers } from "./UserThunks";
 
 const InitialState = {
   users: [],
@@ -31,17 +25,11 @@ const userSlice = createSlice({
       state.userDetail = action.payload;
     });
 
-    builder.addCase(deleteUserById.fulfilled, () => {
-      fetchUsers();
-    });
+    // builder.addCase(deleteUserById., () => {});
 
-    builder.addCase(createUser.fulfilled, () => {
-      fetchUsers();
-    });
+    // builder.addCase(createUser.fulfilled, () => {});
 
-    builder.addCase(updateUserById.fulfilled, () => {
-      fetchUsers();
-    });
+    // builder.addCase(updateUserById.fulfilled, () => {});
   },
 });
 

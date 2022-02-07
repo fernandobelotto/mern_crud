@@ -1,6 +1,6 @@
 import { User } from 'models/user'
-import React, { useEffect } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'store'
 import { deleteUserById, fetchUserById, fetchUsers } from 'store/UserThunks'
 
@@ -26,6 +26,8 @@ export default function UsersPage() {
 
     return (
         <>
+            <Link to='/'>back to home</Link>
+
             <h1>Users</h1>
             <Link to='new'>new user</Link>
             {users.length > 0 ? users.map((user: User) => {

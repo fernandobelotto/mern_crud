@@ -1,5 +1,4 @@
 import UserForm from 'components/users/UserForm'
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function NewUserPage() {
